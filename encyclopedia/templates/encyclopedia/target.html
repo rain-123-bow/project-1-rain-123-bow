@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    {{ entries | safe }}
+    <div class="d1"></div>
+    <style>
+        .d1{
+            width: 1400px;
+            height: 10px;
+            background-color: white;
+        }
+    </style>
+{% endblock %}
+

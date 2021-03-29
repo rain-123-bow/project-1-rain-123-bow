@@ -1,0 +1,63 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <style>
+        .dd1{
+            width: 1400px;
+        }
+        h1{
+            font-size: 2.5rem;
+            font-weight: 650;
+        }
+        .ss1{
+            display: inline-block;
+            width: 7em;
+            height: 1em;
+            position: center;
+        }
+        b1{
+            display: inline-block;
+            width: 7em;
+            position: relative;
+            top: -141px;
+        }
+        .dd2, .dd3{
+            border: aqua solid 1px;
+            padding: 1rem;
+        }
+        .dd2{
+            background-color: antiquewhite;
+        }
+        .dd3 {
+            background-color: burlywood;
+        }
+        textarea{
+            height: 10em;
+        }
+        button{
+            margin-left: 30%;
+            width: 100px;
+        }
+    </style>
+    <div class="dd1">
+        <h1>Create a New Page</h1>
+        <form action="{% url 'create' %}" method="get">
+            {% csrf_token %}
+            <div class="dd2">
+            <span class="ss1"><b>Title:</b></span>
+            <input type="text", name="title">
+            </div>
+        <div class="dd3">
+            <b1>
+                <b>Content:</b>
+            </b1>
+            <textarea name="content" rows="2" cols="3"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
